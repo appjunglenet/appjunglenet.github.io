@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Site Home</title>
+  <meta name="description" content="Home page — navigate to other pages to ensure the site functions correctly." />
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="/" data-nav>Home</a></li>
+        <li><a href="/about.html" data-nav>About</a></li>
+        <li><a href="/products.html" data-nav>Products</a></li>
+        <li><a href="/contact.html" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Welcome</h1>
+      <p>Use the navigation above to open site pages. This index ensures links and basic scripts load correctly.</p>
+    </section>
+
+    <section class="features" aria-labelledby="features-title">
+      <h2 id="features-title">Quick checks</h2>
+      <ul>
+        <li>Responsive layout</li>
+        <li>Accessible navigation</li>
+        <li>Client-side enhancements</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <span id="year"></span> My Site</p>
+  </footer>
+
+  <noscript>
+    <div class="no-js-warning">JavaScript is disabled. Some functionality may be limited.</div>
+  </noscript>
+
+  <script>
+    // Populate current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight active navigation link
+    (function highlightActiveNav() {
+      try {
+        const links = document.querySelectorAll('a[data-nav]');
+        const current = location.pathname.replace(/\/$/, '') || '/';
+        links.forEach(link => {
+          const url = new URL(link.href, location.origin);
+          const path = url.pathname.replace(/\/$/, '') || '/';
+          if (path === current) link.classList.add('active');
+        });
+      } catch (e) {
+        // Fail silently to avoid breaking page load
+        console.error(e);
+      }
+    })();
+
+    // Register service worker if available
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+          /* registration failed or sw not present */
+        });
+      });
+    }
+  </script>
+  <script src="/scripts/main.js" defer></script>
+</body>
+</html>
