@@ -1,78 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Turretrix - Alien Invasion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0a0a0f 0%, #1a1a2e 60%, #0a0a0f 100%);
-      color: #fff;
-      overflow-x: hidden;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-      border-bottom: 1px solid #00ffbf;
-    }
-    header h1 {
-      font-size: 2.5em;
-      color: #00ffbf;
-      text-shadow: 0 0 10px #00ffbf;
-    }
-    .hero {
-      background: url('turretrix-feature.jpg') center/cover no-repeat;
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
-    }
-    .hero h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #ffdd00;
-      text-shadow: 0 0 15px #ff6600;
-    }
-    .hero p {
-      max-width: 600px;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #e0e0e0;
-      margin-bottom: 30px;
-    }
-    .cta-button {
-      background: linear-gradient(90deg, #00ffbf, #00f5ff);
-      color: #000;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      box-shadow: 0 0 20px #00ffbf;
-      transition: transform 0.2s ease;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.8);
-      font-size: 0.9em;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Turretrix: Alien Invasion</h1>
-  </header>
+<meta charset="UTF-8" />
+<title>Turretrix - Alien Invasion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d12;
+    color: #fff;
+    text-align: center;
+  }
 
-  <section class="hero">
-    <h2>Defend Earth from the Alien Sw
+  header {
+    padding: 25px 0;
+    background: #11131a;
+    border-bottom: 2px solid #00ffc8;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    color: #00ffc8;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffdd55;
+  }
+
+  .hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+  }
+
+  .play-btn {
+    display: inline-block;
+    background: #00ffc8;
+    color: #000;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .play-btn:hover {
+    transform: scale(1.05);
+    background: #00e6b4;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding: 20px;
+    background: #11131a;
+    color: #888;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Turretrix: Alien Invasion</h1>
+</header>
+
+<section class="hero">
+  <h2>Defend Earth from the Alien Swarm</h2>
+  <p>
+    Build and upgrade powerful turrets as waves of alien forces descend from the skies
+    and rise from the ground. Hold the line and protect the last surviving city.
+  </p>
+
+  <a class="play-btn"
+     href="https://play.google.com/store/apps/details?id=com.appjunglenet.turretrix&hl=en_US"
+     target="_blank">
+     Get it on Google Play
+  </a>
+</section>
+
+<footer>
+  © <script>document.write(new Date().getFullYear());</script> Turretrix. All rights reserved.
+</footer>
+
+</body>
+</html>
