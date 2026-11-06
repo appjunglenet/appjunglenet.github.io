@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostly Messages Privacy Policy</title>
+<meta name="description" content="How the Mostly Messages Android app handles your information: email, calendar, notes, emergency contacts, weather and advertising.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f8fb;
+    --surface-2: #eef2f7;
+    --text: #1f2328;
+    --muted: #5b6470;
+    --line: #dde3ea;
+    --accent: #12695a;
+    --accent-soft: #e3f4ef;
+    --amber: #a35a00;
+    --amber-soft: #fff4e5;
+    --link: #0b57d0;
+    --radius: 14px;
+    --max: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101418;
+      --surface: #171c21;
+      --surface-2: #1d242b;
+      --text: #e6e9ec;
+      --muted: #a2abb5;
+      --line: #2b333c;
+      --accent: #6fd6bd;
+      --accent-soft: #15302a;
+      --amber: #ffbd79;
+      --amber-soft: #2e2416;
+      --link: #8ab4f8;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  code { font: 0.92em ui-monospace, SFMono-Regular, Consolas, monospace; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+
+  /* Header */
+  .masthead { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .masthead .inner { max-width: var(--max); margin: 0 auto; padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
+  .logo { width: 40px; height: 40px; flex: none; }
+  .brand { font-weight: 650; font-size: 18px; letter-spacing: -0.01em; }
+  .brand small { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
+
+  .hero { max-width: var(--max); margin: 0 auto; padding: 44px 20px 12px; }
+  .hero h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.02em; font-weight: 650; }
+  .meta { color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .lede { font-size: 18px; max-width: 760px; margin: 18px 0 0; }
+
+  /* Layout */
+  .layout { max-width: var(--max); margin: 0 auto; padding: 8px 20px 64px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; }
+  nav.toc { position: sticky; top: 20px; align-self: start; font-size: 14px; padding-top: 28px; }
+  nav.toc h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+  nav.toc a { display: block; padding: 5px 0 5px 14px; margin-left: -2px; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; }
+  nav.toc a:hover { color: var(--text); border-left-color: var(--accent); }
+  main { min-width: 0; }
+
+  section { padding-top: 28px; scroll-margin-top: 12px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 28px; }
+  h2 { font-size: 24px; line-height: 1.3; margin: 0 0 12px; letter-spacing: -0.01em; font-weight: 640; }
+  h3 { font-size: 17px; margin: 24px 0 6px; font-weight: 640; }
+  p, li { max-width: 760px; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+
+  /* At a glance */
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 14px; margin-top: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 15px; display: flex; gap: 8px; align-items: baseline; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; position: relative; top: -1px; }
+  .dot.amber { background: var(--amber); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: var(--radius); }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 620px; }
+  th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+  th { background: var(--surface); font-weight: 600; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { font-weight: 560; }
+
+  .callout { border-radius: var(--radius); padding: 14px 18px; margin: 16px 0; max-width: 760px; border: 1px solid var(--line); background: var(--accent-soft); }
+  .callout.amber { background: var(--amber-soft); }
+  .callout strong { display: block; margin-bottom: 2px; }
+
+  .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 14px 0; }
+  .links a { display: block; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; background: var(--surface); }
+  .links a span { display: block; color: var(--muted); font-size: 13px; }
+
+  footer { border-top: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 14px; }
+  footer .inner { max-width: var(--max); margin: 0 auto; padding: 22px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    nav.toc { position: static; padding-top: 18px; }
+    nav.toc ol { columns: 2; column-gap: 18px; }
+  }
+  @media (max-width: 520px) {
+    nav.toc ol { columns: 1; }
+    .hero { padding-top: 30px; }
+  }
+  @media print {
+    nav.toc, .masthead { display: none; }
+    .layout { display: block; }
+    a { color: inherit; }
+    section { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="inner">
+    <svg class="logo" viewBox="0 0 108 108" aria-hidden="true">
+      <rect width="108" height="108" rx="26" fill="#102D38"/>
+      <path fill="#FFBD79" d="M61,29H74Q80,29 80,35V50Q80,56 74,56H61Q55,56 55,50V35Q55,29 61,29Z"/>
+      <path fill="#FFBD79" d="M62.75,26H62.75Q64.5,26 64.5,27.75V33.25Q64.5,35 62.75,35H62.75Q61,35 61,33.25V27.75Q61,26 62.75,26Z M72.75,26H72.75Q74.5,26 74.5,27.75V33.25Q74.5,35 72.75,35H72.75Q71,35 71,33.25V27.75Q71,26 72.75,26Z"/>
+      <path fill="#89E6CB" d="M35,37H68Q77,37 77,46V61Q77,70 68,70H49L38,79V70H35Q26,70 26,61V46Q26,37 35,37Z"/>
+      <path fill="#102D38" d="M37.25,47H62.75Q65,47 65,49.25V49.25Q65,51.5 62.75,51.5H37.25Q35,51.5 35,49.25V49.25Q35,47 37.25,47Z"/>
+      <path fill="#102D38" d="M37.25,57H53.75Q56,57 56,59.25V59.25Q56,61.5 53.75,61.5H37.25Q35,61.5 35,59.25V59.25Q35,57 37.25,57Z"/>
+    </svg>
+    <div class="brand">Mostly Messages<small>Privacy Policy</small></div>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Mostly Messages Privacy Policy</h1>
+  <div class="meta">
+    <span>Effective November 6, 2026</span>
+    <span>Applies to the Mostly Messages app for Android</span>
+  </div>
+  <p class="lede">
+    Mostly Messages turns a phone or tablet into a shared message board for a household or
+    workplace. This policy explains what information the app handles, where that information
+    goes, the third-party services involved, and the choices you have. In short: your email,
+    calendar, notes and contacts are processed on your device and are not sent to us.
+  </p>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#glance">At a glance</a></li>
+      <li><a href="#information">Information the app handles</a></li>
+      <li><a href="#use">How information is used</a></li>
+      <li><a href="#services">Services the app connects to</a></li>
+      <li><a href="#ads">Advertising (Google AdMob)</a></li>
+      <li><a href="#google-data">Google user data</a></li>
+      <li><a href="#storage">Storage, security and retention</a></li>
+      <li><a href="#choices">Your choices and controls</a></li>
+      <li><a href="#limits">Limits of this policy</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="glance">
+      <h2>At a glance</h2>
+      <div class="glance">
+        <div class="card"><h3><span class="dot"></span>No app servers</h3><p>We don't run servers that receive your email, calendar, notes or contacts. The app talks directly to the services you connect.</p></div>
+        <div class="card"><h3><span class="dot"></span>Stored on your device</h3><p>What the app keeps is stored on the device, encrypted with a key held in the Android Keystore and excluded from device backups.</p></div>
+        <div class="card"><h3><span class="dot"></span>Never sold</h3><p>We don't sell your information, and email and calendar content is never used for advertising.</p></div>
+        <div class="card"><h3><span class="dot amber"></span>Ads by Google</h3><p>The board shows a banner ad from Google AdMob, which collects device and usage data under Google's own policies.</p></div>
+      </div>
+    </section>
+
+    <section id="information">
+      <h2>Information the app handles</h2>
+      <p>The app only handles the information needed for the features you use. Each feature is described below.</p>
+
+      <h3>Email account</h3>
+      <p>
+        You connect one email account: either a Google account with Gmail, or another account that
+        offers IMAP and SMTP.
+      </p>
+      <ul>
+        <li><strong>Account identity.</strong> The email address of the connected account, to show which account is in use.</li>
+        <li><strong>Unread Inbox messages.</strong> Sender, subject, date and message body of unread messages in the Inbox that match the board's filters, so they can be shown on the board.</li>
+        <li><strong>Read status.</strong> When someone presses <em>Mark read</em>, the app marks that one message as read in the account.</li>
+        <li><strong>Messages you send.</strong> The app sends email only when someone presses <em>Send</em> in the reply or share-contacts form, and only to the addresses entered there. Sent messages appear in the account's Sent folder.</li>
+        <li><strong>IMAP/SMTP password.</strong> For other email accounts, the password (usually an app password) is stored on the device only and sent only to the mail servers you entered, over an encrypted connection.</li>
+      </ul>
+      <p>The app does not delete, archive or move email, and does not change labels or folders other than marking a message read.</p>
+
+      <h3>Calendar</h3>
+      <p>
+        Calendar features are optional. With a Google account, if you turn calendar on, the app reads
+        your calendar list and events (title, time, reminders, location, description, organizer,
+        guests and meeting link) to show events on the board when their reminder is due and in the
+        day view. It creates, changes or deletes an event only when someone saves an event, edits
+        one, or confirms a deletion. It never replies to invitations. Events for other days are
+        loaded only while you view that day and are not stored. With an IMAP/SMTP account, calendar
+        events you add are kept on the device only and are never synced.
+      </p>
+
+      <h3>Notes and emergency contacts</h3>
+      <p>
+        Notes typed on the board, and emergency contacts you enter (names, relationships, phone
+        numbers and email addresses), are stored only on the device. Emergency contacts leave the
+        device only if someone chooses to share them by email, to the recipients they enter.
+      </p>
+
+      <h3>Weather</h3>
+      <p>
+        If weather is on (it is on by default), the clock shows the current weather and today's
+        forecast for a U.S. city or ZIP code you choose. The app sends that place's map coordinates,
+        the center of the city or ZIP code you picked, to the U.S. National Weather Service. The
+        app does not use your device's location and does not ask for location permission.
+      </p>
+
+      <h3>Settings</h3>
+      <p>
+        Board settings such as colors, timings, the sender whitelist, the subject keyword and the
+        weather location are stored on the device and excluded from cloud backup.
+      </p>
+    </section>
+
+    <section id="use">
+      <h2>How information is used</h2>
+      <p>Information is used only to provide the app's features on your device:</p>
+      <ul>
+        <li>to show selected messages, notes, calendar events and weather on the board;</li>
+        <li>to mark messages read, send the replies and shares people write, and save calendar changes people make;</li>
+        <li>to keep the board working when the connection drops briefly, using an encrypted cache.</li>
+      </ul>
+      <p>
+        We do not use your email, calendar, notes or contacts for advertising, analytics or
+        profiling, and no person at our end reads them. The app does not include analytics or
+        crash-reporting SDKs of its own, and it does not log message content, passwords or tokens.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Services the app connects to</h2>
+      <p>
+        The app connects directly from your device to the services below. Each of them receives the
+        request, including your device's IP address as with any internet connection, and handles
+        it under its own terms and privacy policy.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Service</th><th>When</th><th>What it receives</th><th>Its policy</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Google (Sign-in, Gmail API, Calendar API)</td>
+              <td>When a Google account is connected</td>
+              <td>Requests to read, mark read or send email and to read or change calendar events, made with your authorization</td>
+              <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+              <td>Your email provider (IMAP/SMTP)</td>
+              <td>When an IMAP/SMTP account is connected</td>
+              <td>Your login and requests to read, mark read or send email, over an encrypted connection</td>
+              <td>Your provider's privacy policy</td>
+            </tr>
+            <tr>
+              <td>U.S. National Weather Service (api.weather.gov)</td>
+              <td>While the board is on screen and weather is on</td>
+              <td>The chosen place's coordinates and the app's name and contact address, which the service asks apps to send</td>
+              <td><a href="https://www.weather.gov/privacy">NWS privacy policy</a></td>
+            </tr>
+            <tr>
+              <td>Google AdMob and User Messaging Platform</td>
+              <td>While the app shows the board</td>
+              <td>Device and usage information for ad delivery, measurement and consent; see <a href="#ads">Advertising</a></td>
+              <td><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps</a></td>
+            </tr>
+            <tr>
+              <td>Google Play</td>
+              <td>When you install or update the app</td>
+              <td>Install and, if you allow it in Android, crash and diagnostic data</td>
+              <td><a href="https://policies.google.com/privacy">Google Privacy Policy</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The app also uses open-source libraries that run entirely on your device, such as the
+        JavaMail library for IMAP/SMTP, the jsoup HTML parser and the OkHttp network library. They
+        do not send information anywhere on their own.
+      </p>
+    </section>
+
+    <section id="ads">
+      <h2>Advertising (Google AdMob)</h2>
+      <p>
+        Mostly Messages is free and shows a banner ad provided by Google AdMob. To deliver and
+        measure ads and prevent fraud, the Google Mobile Ads SDK may collect information such as
+        your device's advertising ID, IP address, approximate location derived from the IP
+        address, device and app information, and how ads are viewed and tapped. Google may use this
+        information to personalize ads, where you allow it.
+      </p>
+      <div class="callout">
+        <strong>What ads never receive</strong>
+        Ad requests never include your email, calendar events, notes, emergency contacts or the
+        weather location you chose.
+      </div>
+      <p>
+        Where required by law, for example in the European Economic Area, the United Kingdom and
+        Switzerland, the app uses Google's User Messaging Platform to show a consent message before
+        ads are personalized. Google processes this information under its own policies:
+      </p>
+      <div class="links">
+        <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services<span>policies.google.com</span></a>
+        <a href="https://policies.google.com/technologies/ads">How Google uses information in advertising<span>policies.google.com</span></a>
+        <a href="https://support.google.com/admob/answer/6128543">AdMob and user privacy<span>support.google.com</span></a>
+        <a href="https://myadcenter.google.com/">Manage ad personalization in My Ad Center<span>myadcenter.google.com</span></a>
+      </div>
+      <p>
+        You can reset or delete your device's advertising ID, or opt out of ad personalization, in
+        your Android settings under <em>Privacy &gt; Ads</em> (the exact path varies by device).
+      </p>
+    </section>
+
+    <section id="google-data">
+      <h2>Google user data</h2>
+      <p>
+        When you connect a Google account, the app asks for permission to read and modify Gmail
+        (needed to read messages, mark them read and send the messages people write) and,
+        separately and only if you turn calendar on, to read your calendars and to create and
+        change events. You can see and remove this access at any time in your
+        <a href="https://myaccount.google.com/permissions">Google Account permissions</a>.
+      </p>
+      <div class="callout">
+        <strong>Limited Use</strong>
+        Mostly Messages's use and transfer to any other app of information received from Google APIs
+        will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.
+      </div>
+      <p>
+        Google user data is not transferred to third parties, is not used for advertising, and is not
+        read by people, except where you ask us for help and give permission, where needed for
+        security, or where the law requires it.
+      </p>
+    </section>
+
+    <section id="storage">
+      <h2>Storage, security and retention</h2>
+      <ul>
+        <li>Account details, cached messages, calendar data, notes, emergency contacts, IMAP/SMTP passwords and the last weather are stored on the device, encrypted with AES-256-GCM using a key held in the Android Keystore, and excluded from device backups and device-to-device transfer.</li>
+        <li>All network connections use encryption (HTTPS or TLS), with certificate checks.</li>
+        <li>Cached messages are removed when they no longer belong on the board, for example once read or archived.</li>
+        <li><em>Disconnect</em> deletes the account's sign-in details and all cached email and calendar data from the device.</li>
+        <li>Notes and emergency contacts stay until you delete them in the app; they are not removed by <em>Disconnect</em>.</li>
+        <li>Uninstalling the app deletes everything it stored on the device.</li>
+      </ul>
+      <p>
+        No method of storage or transmission is completely secure, and a device that is unlocked
+        and left in a shared space can be used by anyone nearby. The board is designed to be seen
+        by the people around it, so choose your filters with that in mind.
+      </p>
+    </section>
+
+    <section id="choices">
+      <h2>Your choices and controls</h2>
+      <ul>
+        <li><strong>Choose what appears.</strong> Limit the board to approved senders or a subject keyword in Settings.</li>
+        <li><strong>Disconnect.</strong> Remove the connected account and its cached data in Settings.</li>
+        <li><strong>Revoke Google access.</strong> Remove the app's access in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</li>
+        <li><strong>Calendar.</strong> Turn calendar off in Settings at any time.</li>
+        <li><strong>Weather.</strong> Turn weather off in Settings &gt; Weather to stop all weather requests.</li>
+        <li><strong>Ads.</strong> Manage ad personalization and your advertising ID as described in <a href="#ads">Advertising</a>.</li>
+        <li><strong>Delete everything.</strong> Uninstall the app.</li>
+      </ul>
+    </section>
+
+    <section id="limits">
+      <h2>Limits of this policy</h2>
+      <p>
+        This policy describes how the Mostly Messages app itself handles information. Some parts of
+        the experience are provided by others, and we want to be clear about where our knowledge
+        and control stop:
+      </p>
+      <ul>
+        <li><strong>Third-party services.</strong> Google, your email provider, the National Weather Service and Google AdMob operate their own services. We describe what the app sends them, based on how the app is built and on their published documentation, but we do not control and cannot fully verify how they collect, use, retain or share information. Their own privacy policies apply.</li>
+        <li><strong>Advertising SDK.</strong> The Google Mobile Ads SDK is provided by Google and runs inside the app. The information it collects is determined by Google and may change with SDK updates. Google's documentation linked above is the authoritative description.</li>
+        <li><strong>Android and Google Play.</strong> Your device's operating system, Google Play services and Google Play may collect information, such as crash reports and diagnostics if you allow them, under their own terms. If you share diagnostics, Google may make aggregated crash reports available to us; these describe app errors and are not intended to contain your messages.</li>
+        <li><strong>People at the board.</strong> Anyone who can see or use the device can see what the board shows, open messages and mark them read. The app cannot control who has physical access to the device.</li>
+        <li><strong>Email you send.</strong> Once a reply or shared contact list is sent, it is handled by your email provider and the recipients' providers, outside the app's control.</li>
+      </ul>
+    </section>
+
+    <section id="children">
+      <h2>Children</h2>
+      <p>
+        Mostly Messages is not directed at children under 13, and we do not knowingly collect
+        personal information from children. Connecting an account is intended for the adult who
+        owns it.
+      </p>
+    </section>
+
+    <section id="rights">
+      <h2>Your rights</h2>
+      <p>
+        Depending on where you live, you may have rights to access, correct, delete or restrict
+        the use of your personal information, or to object to certain processing. Because the app
+        stores your information on your device rather than on our servers, you can exercise most of
+        these rights directly in the app (Disconnect, delete notes and contacts) or by uninstalling
+        it. For information held by Google, your email provider or the National Weather Service,
+        please use their privacy tools. For anything else, contact us using the details below.
+      </p>
+      <p>We do not sell personal information.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this policy as the app changes. When we do, we will update the effective date
+        at the top of this page and, for significant changes, give notice in the app or on its
+        Google Play listing.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact us</h2>
+      <p>
+        Questions or requests about this policy or your information:<br>
+        <strong>Support</strong> &middot; <a href="mailto:support@app-jungle.net">support@app-jungle.net</a> &middot; <a href="https://app-jungle.net">app-jungle.net</a>
+      </p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="inner">
+    <span>Mostly Messages Privacy Policy &middot; Effective November 6, 2026</span>
+    <span><a href="https://app-jungle.net">app-jungle.net</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
