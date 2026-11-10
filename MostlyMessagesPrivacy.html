@@ -140,7 +140,7 @@
 <div class="hero">
   <h1>Mostly Messages Privacy Policy</h1>
   <div class="meta">
-    <span>Effective November 6, 2026</span>
+    <span>Effective November 10, 2026</span>
     <span>Applies to the Mostly Messages app for Android</span>
   </div>
   <p class="lede">
@@ -159,7 +159,7 @@
       <li><a href="#information">Information the app handles</a></li>
       <li><a href="#use">How information is used</a></li>
       <li><a href="#services">Services the app connects to</a></li>
-      <li><a href="#ads">Advertising (Google AdMob)</a></li>
+      <li><a href="#ads">Advertising (Google AdMob and Meta)</a></li>
       <li><a href="#google-data">Google user data</a></li>
       <li><a href="#storage">Storage, security and retention</a></li>
       <li><a href="#choices">Your choices and controls</a></li>
@@ -196,7 +196,7 @@
         <li><strong>Unread Inbox messages.</strong> Sender, subject, date and message body of unread messages in the Inbox that match the board's filters, so they can be shown on the board.</li>
         <li><strong>Read status.</strong> When someone presses <em>Mark read</em>, the app marks that one message as read in the account.</li>
         <li><strong>Messages you send.</strong> The app sends email only when someone presses <em>Send</em> in the reply or share-contacts form, and only to the addresses entered there. Sent messages appear in the account's Sent folder.</li>
-        <li><strong>IMAP/SMTP password.</strong> For other email accounts, the password (usually an app password) is stored on the device only and sent only to the mail servers you entered, over an encrypted connection.</li>
+        <li><strong>IMAP/SMTP password.</strong> For other email accounts, the password (usually an app password) is stored on the device only and sent only to the mail servers you entered, over an encrypted connection. This includes Gmail and Google Workspace accounts connected with a Google app password: the app password goes only to Google&rsquo;s mail servers, and no Google API or Google sign-in is used for them.</li>
       </ul>
       <p>The app does not delete, archive or move email, and does not change labels or folders other than marking a message read.</p>
 
@@ -207,8 +207,13 @@
         guests and meeting link) to show events on the board when their reminder is due and in the
         day view. It creates, changes or deletes an event only when someone saves an event, edits
         one, or confirms a deletion. It never replies to invitations. Events for other days are
-        loaded only while you view that day and are not stored. With an IMAP/SMTP account, calendar
-        events you add are kept on the device only and are never synced.
+        loaded only while you view that day and are not stored. With an IMAP/SMTP account, events can
+        be kept on the device only (&ldquo;This board&rdquo;, never synced). If you also allow Android&rsquo;s
+        Calendar permission, the app reads the calendars stored on the device (for example Google or
+        Outlook calendars added in Android Settings) in the same way, and adds, changes or deletes
+        events in them only when someone does so on the board. The app reads and writes them on the
+        device; any syncing is done by Android and the accounts you added, not by us, and nothing is
+        sent to us. You can withdraw the permission in Android Settings at any time.
       </p>
 
       <h3>Notes and emergency contacts</h3>
@@ -243,8 +248,10 @@
       </ul>
       <p>
         We do not use your email, calendar, notes or contacts for advertising, analytics or
-        profiling, and no person at our end reads them. The app does not include analytics or
-        crash-reporting SDKs of its own, and it does not log message content, passwords or tokens.
+        profiling, and no person at our end reads them. The app does not include crash-reporting
+        SDKs, and it does not log message content, passwords or tokens. The only measurement it
+        includes is Meta's app events, which tell us when the app was installed or opened after a
+        Facebook or Instagram ad; see <a href="#ads">Advertising</a>.
       </p>
     </section>
 
@@ -284,6 +291,12 @@
               <td><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps</a></td>
             </tr>
             <tr>
+              <td>Meta (Facebook SDK app events)</td>
+              <td>When the app is installed and opened, after ad consent where it is required</td>
+              <td>App install and launch events, your device's advertising ID, and device and app information; see <a href="#ads">Advertising</a></td>
+              <td><a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy</a></td>
+            </tr>
+            <tr>
               <td>Google Play</td>
               <td>When you install or update the app</td>
               <td>Install and, if you allow it in Android, crash and diagnostic data</td>
@@ -300,7 +313,7 @@
     </section>
 
     <section id="ads">
-      <h2>Advertising (Google AdMob)</h2>
+      <h2>Advertising (Google AdMob and Meta)</h2>
       <p>
         Mostly Messages is free and shows a banner ad provided by Google AdMob. To deliver and
         measure ads and prevent fraud, the Google Mobile Ads SDK may collect information such as
@@ -327,6 +340,24 @@
       <p>
         You can reset or delete your device's advertising ID, or opt out of ad personalization, in
         your Android settings under <em>Privacy &gt; Ads</em> (the exact path varies by device).
+      </p>
+      <h3>Measuring our Facebook and Instagram ads (Meta)</h3>
+      <p>
+        We advertise the app on Facebook and Instagram. To find out which ads lead to installs, the
+        app includes Meta's Facebook SDK, which sends Meta the app's install and launch events
+        together with your device's advertising ID, device model, operating system version, app
+        version, and the IP address of the connection. Meta matches this with ad views to report
+        to us how many installs our ads produced, and may use it as described in its own policies.
+        The SDK starts only after the consent step above allows ads, and it never receives your
+        email, calendar events, notes, emergency contacts or weather location.
+      </p>
+      <div class="links">
+        <a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy<span>facebook.com</span></a>
+        <a href="https://www.facebook.com/adpreferences/">Manage your Meta ad preferences<span>facebook.com</span></a>
+      </div>
+      <p>
+        Deleting or resetting your device's advertising ID, or turning on <em>Opt out of ads
+        personalization</em>, also limits what Meta can link to you.
       </p>
     </section>
 
@@ -376,7 +407,7 @@
         <li><strong>Choose what appears.</strong> Limit the board to approved senders or a subject keyword in Settings.</li>
         <li><strong>Disconnect.</strong> Remove the connected account and its cached data in Settings.</li>
         <li><strong>Revoke Google access.</strong> Remove the app's access in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</li>
-        <li><strong>Calendar.</strong> Turn calendar off in Settings at any time.</li>
+        <li><strong>Calendar.</strong> Turn calendar off in Settings at any time. With an IMAP/SMTP account, remove the Calendar permission in Android Settings &gt; Apps &gt; Mostly Messages &gt; Permissions to stop the app reading the calendars on the device.</li>
         <li><strong>Weather.</strong> Turn weather off in Settings &gt; Weather to stop all weather requests.</li>
         <li><strong>Ads.</strong> Manage ad personalization and your advertising ID as described in <a href="#ads">Advertising</a>.</li>
         <li><strong>Delete everything.</strong> Uninstall the app.</li>
@@ -391,8 +422,8 @@
         and control stop:
       </p>
       <ul>
-        <li><strong>Third-party services.</strong> Google, your email provider, the National Weather Service and Google AdMob operate their own services. We describe what the app sends them, based on how the app is built and on their published documentation, but we do not control and cannot fully verify how they collect, use, retain or share information. Their own privacy policies apply.</li>
-        <li><strong>Advertising SDK.</strong> The Google Mobile Ads SDK is provided by Google and runs inside the app. The information it collects is determined by Google and may change with SDK updates. Google's documentation linked above is the authoritative description.</li>
+        <li><strong>Third-party services.</strong> Google, your email provider, the National Weather Service, Google AdMob and Meta operate their own services. We describe what the app sends them, based on how the app is built and on their published documentation, but we do not control and cannot fully verify how they collect, use, retain or share information. Their own privacy policies apply.</li>
+        <li><strong>Advertising SDKs.</strong> The Google Mobile Ads SDK and Meta's Facebook SDK are provided by Google and Meta and run inside the app. The information they collect is determined by Google and Meta and may change with SDK updates. Their documentation linked above is the authoritative description.</li>
         <li><strong>Android and Google Play.</strong> Your device's operating system, Google Play services and Google Play may collect information, such as crash reports and diagnostics if you allow them, under their own terms. If you share diagnostics, Google may make aggregated crash reports available to us; these describe app errors and are not intended to contain your messages.</li>
         <li><strong>People at the board.</strong> Anyone who can see or use the device can see what the board shows, open messages and mark them read. The app cannot control who has physical access to the device.</li>
         <li><strong>Email you send.</strong> Once a reply or shared contact list is sent, it is handled by your email provider and the recipients' providers, outside the app's control.</li>
